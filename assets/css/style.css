@@ -41,6 +41,9 @@ div header .header-right #button{
 div main{
     height: 80vh;
     background-color: #7fffd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div main #griglia{
@@ -49,9 +52,10 @@ div main #griglia{
     border: 2px solid black;
     flex-wrap: wrap;
     display: flex;
+    
 }
 
-.box{
+.box-beginner{
     border: 1px solid black;
     flex-basis: calc( 100% / 10 );
     aspect-ratio: 1;
@@ -60,6 +64,31 @@ div main #griglia{
     justify-content: center;
     font-size: 20px;
     color: black;
+    cursor: pointer;
+}
+
+.box-standard{
+    border: 1px solid black;
+    flex-basis: calc( 100% / 9 );
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.box-hard{
+    border: 1px solid black;
+    flex-basis: calc( 100% / 7 );
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
 }
 
 .d_none{
@@ -71,10 +100,6 @@ div main #griglia{
     
 }
 
-
-div main .container{
-    padding-block: 20px;
-}
 
 footer{
     text-align: center;

@@ -5,27 +5,44 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 
 const grigliaHtml = document.getElementById('griglia');
 const buttonHtml = document.getElementById('button');
+const difficultyHtml = document.getElementById('difficulty');
 
 
 buttonHtml.addEventListener("click", function (){
-    document.querySelector(".container").classList.remove("d_none")
+    document.querySelector(".d_none").classList.remove("d_none")
+    if(difficultyHtml.value == "Beginner"){
+
+        for (let i = 1; i <= 100; i++) {
+            
+            createBox("box-beginner", i)
+        
+        }
+    }else if(difficultyHtml.value == "Standard"){
+        
+        for (let i = 1; i <= 81; i++) {
+            
+            createBox("box-standard", i)
+        
+        }
+    }else if(difficultyHtml.value == "Hard"){
+        
+        for (let i = 1; i <= 49; i++) {
+            
+            createBox("box-hard", i)
+        
+        }
+    }
 })
-for (let i = 1; i <= 100; i++) {
+
+function createBox(boxClass, index) {
+    let box = document.createElement("div");
+    box.classList.add(boxClass);
+    box.innerHTML = `<span>${index}</span>`;
     
-    let box = document.createElement("div")
-
-    box.classList.add("box")
-
-    box.innerHTML = `<span>${i}</span>`
-
     box.addEventListener("click", function () {
-    
+        this.classList.toggle("blue");
+        console.log(index);
+    });
 
-        this.classList.toggle("blue")
-        console.log(i)
-
-    })
-
-    grigliaHtml.append(box)
-
+    grigliaHtml.append(box);
 }
